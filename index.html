@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-06-28 19:46:38 / 修改时间：20:08:56" itemprop="dateCreated datePublished" datetime="2021-06-28T19:46:38+08:00">2021-06-28</time>
+              <time title="创建时间：2021-06-28 19:46:38 / 修改时间：20:14:53" itemprop="dateCreated datePublished" datetime="2021-06-28T19:46:38+08:00">2021-06-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,8 +240,7 @@
 <li>依然在<strong>Node.js command prompt</strong>中，输入<code>npm install -g hexo-cli</code>安装Hexo</li>
 <li>输入<code>hexo -v</code>查看Hexo版本，可以看到<code>hexo-cli: 3.1.0</code>等多行参数</li>
 </ul>
-<h1 id="2-搭建个人博客"><a href="#2-搭建个人博客" class="headerlink" title="2. 搭建个人博客"></a>2. 搭建个人博客</h1><p>##2.1 创建本地博客</p>
-<ul>
+<h1 id="2-搭建个人博客"><a href="#2-搭建个人博客" class="headerlink" title="2. 搭建个人博客"></a>2. 搭建个人博客</h1><h2 id="2-1-创建本地博客"><a href="#2-1-创建本地博客" class="headerlink" title="2.1 创建本地博客"></a>2.1 创建本地博客</h2><ul>
 <li>选择本地博客文件夹，如<code>F:\Documents</code>，在其中新建文件夹<code>GitBlog</code></li>
 <li>在新建的文件夹中，右击，选择<em>Git Bash Here</em>，打开<strong>Git Bash</strong></li>
 <li>输入<code>hexo init</code>将GitBlog文件夹初始化成一个博客文件夹</li>
@@ -260,8 +259,7 @@
 </blockquote>
 </li>
 </ul>
-<p>##2.2 写一篇博客</p>
-<ul>
+<h2 id="2-2-写一篇博客"><a href="#2-2-写一篇博客" class="headerlink" title="2.2 写一篇博客"></a>2.2 写一篇博客</h2><ul>
 <li>依然在<strong>Git Bash</strong>中，输入<code>hexo n &quot;New Post&quot;</code>，New Post为新建博客名称</li>
 <li>在F:\Documents\GitBlog\source_posts文件夹下，会有一个<strong>New Post.md</strong>文件，使用markdown编辑和这个文件，然后保存 ==（如何编辑markdown文件，详见本文第4小节）==</li>
 <li>回到<strong>Git Bash</strong>，输入<code>hexo g</code>，生成文件，可以在<code>public</code>文件夹中查看</li>
@@ -269,8 +267,7 @@
 <li>前往<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>查看结果</li>
 <li>回到<strong>Git Bash</strong>，按 <em>Ctrl+C</em> 结束</li>
 </ul>
-<p>##2.3 部署博客</p>
-<ul>
+<h2 id="2-3-部署博客"><a href="#2-3-部署博客" class="headerlink" title="2.3 部署博客"></a>2.3 部署博客</h2><ul>
 <li>在本地博客文件夹中，打开<code>_config.yml</code>，这是==站点配置文件==</li>
 <li>修改基本配置<ul>
 <li><code>title</code>后面输入博客的标题</li>
@@ -304,15 +301,13 @@
 <p>Hexo的主题可以查看其官网<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主题</a>。这里以NexT主题为例。（<a target="_blank" rel="noopener" href="https://theme-next.org/">NexT的Demo</a>）</p>
 </blockquote>
 <p><img src="%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/NextDemo.png" alt="NexT"></p>
-<p>##3.1 下载与设置NexT主题</p>
-<ul>
+<h2 id="3-1-下载与设置NexT主题"><a href="#3-1-下载与设置NexT主题" class="headerlink" title="3.1 下载与设置NexT主题"></a>3.1 下载与设置NexT主题</h2><ul>
 <li>在<strong>Git Bash</strong>中输入<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>下载配置文件到<code>themes/next</code>文件夹</li>
 <li>打开站点配置文件<code>_config.yml</code>，找到<code>theme:landscape</code>，改为<code>theme:next</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#theme: landscape</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure></li>
 <li>在<strong>Git Bash</strong>中输入<code>hexo clean</code>，<code>hexo g -d</code>重新生成文件，并发布</li>
 <li>前往博客查看，你的github用户名.github.io，如<a target="_blank" rel="noopener" href="http://plutoking.github.io/">plutoking.github.io</a>。</li>
 </ul>
-<p>##3.2 NexT个性化配置</p>
-<h3 id="3-2-1-主题风格"><a href="#3-2-1-主题风格" class="headerlink" title="3.2.1 主题风格"></a>3.2.1 主题风格</h3><ul>
+<h2 id="3-2-NexT个性化配置"><a href="#3-2-NexT个性化配置" class="headerlink" title="3.2 NexT个性化配置"></a>3.2 NexT个性化配置</h2><h3 id="3-2-1-主题风格"><a href="#3-2-1-主题风格" class="headerlink" title="3.2.1 主题风格"></a>3.2.1 主题风格</h3><ul>
 <li>打开<code>themes/next/_configt.yml</code>，这是==主题配置文件==</li>
 <li>搜索<code>Scheme Settings</code>，可以看到由四个主题可供选择：<code>Muse</code>、<code>Mist</code>、<code>Pisces</code>、<code>Gemin</code></li>
 <li>将选择的主题前面的注释符<code>#</code>删除，其余添加注释符<code>#</code></li>
@@ -338,14 +333,12 @@
 <h1 id="4-VS-Code配置Markdown编辑器"><a href="#4-VS-Code配置Markdown编辑器" class="headerlink" title="4. VS Code配置Markdown编辑器"></a>4. VS Code配置Markdown编辑器</h1><blockquote>
 <p>个人博客已经搭建完毕，那么如何编辑博客就是下一个问题。<code>hexo n &quot;title&quot;</code>生成的<code>title.md</code>是一个Markdown文件，所以需要一个Markdown的编辑器。我们选择VS Code作为Markdown编辑器。</p>
 </blockquote>
-<p>##4.1 下载安装VS Code</p>
-<ul>
+<h2 id="4-1-下载安装VS-Code"><a href="#4-1-下载安装VS-Code" class="headerlink" title="4.1 下载安装VS Code"></a>4.1 下载安装VS Code</h2><ul>
 <li>前往<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VS Code官网</a></li>
 <li>下载VS Code</li>
 <li>安装</li>
 </ul>
-<p>##4.2 添加VS Code插件</p>
-<ul>
+<h2 id="4-2-添加VS-Code插件"><a href="#4-2-添加VS-Code插件" class="headerlink" title="4.2 添加VS Code插件"></a>4.2 添加VS Code插件</h2><ul>
 <li>点击右侧工具栏第五个图标：插件</li>
 </ul>
 <p><img src="%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%A1%E7%90%86/Extensions.png" alt="插件"></p>
@@ -353,8 +346,7 @@
 <li>搜索<code>chinese</code>，安装中文包</li>
 <li>搜索<code>Markdown Preview Enhanced</code>，安装Markdown的预览增强插件</li>
 </ul>
-<p>##4.3 使用VS Code写博客</p>
-<ul>
+<h2 id="4-3-使用VS-Code写博客"><a href="#4-3-使用VS-Code写博客" class="headerlink" title="4.3 使用VS Code写博客"></a>4.3 使用VS Code写博客</h2><ul>
 <li>打开文件夹，选择<code>source/_post</code>文件夹</li>
 <li>新建一个<code>md</code>文件，如<code>个人博客管理.md</code></li>
 </ul>
