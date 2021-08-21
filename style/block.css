@@ -40,6 +40,7 @@ caption {
 img {
     margin: 0px auto;
     display: flex;
+    max-width: 100%;
 }
 
 
