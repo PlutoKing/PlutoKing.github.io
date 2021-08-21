@@ -79,6 +79,7 @@ body {
     width: 1000px;
     margin: 10px;
     min-height: 600px;
+    border: 1px solid red;
 }
 
 
@@ -114,4 +115,13 @@ body {
 
 .author {
     font-family: var(--kai-font);
+}
+
+@media screen and (max-width: 1000px) {
+    .mainbody {
+        flex-direction: col;
+    }
+    .main {
+        padding: 0px;
+    }
 }
