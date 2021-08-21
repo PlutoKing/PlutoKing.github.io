@@ -76,6 +76,7 @@ body {
 
 .main {
     padding: 2em;
+    width: 1000px;
     margin: 10px;
     min-height: 600px;
 }
@@ -113,10 +114,4 @@ body {
 
 .author {
     font-family: var(--kai-font);
-}
-
-@media screen and (max-width: 800px) {
-    .mainbody {
-        flex-direction: column;
-    }
 }
