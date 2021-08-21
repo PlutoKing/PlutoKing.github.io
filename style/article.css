@@ -1,0 +1,28 @@
+/* 单篇文章模板 */
+
+.main h1 {
+    font-family: var(--title-font);
+    font-size: var(--h1-size);
+    text-align: center;
+}
+
+.main h2 {
+    font-family: var(--title-font);
+    font-size: var(--h2-size);
+    line-height: 1.5em;
+    color: var(--main-Color);
+    border-bottom: var(--main-Color) solid 2px;
+}
+
+.main h3 {
+    font-family: var(--title-font);
+    font-size: var(--h3-size);
+    line-height: 1.5em;
+    background-color: var(--strip-Color);
+}
+
+.main h4 {
+    font-family: var(--title-font);
+    font-size: var(--h4-size);
+    line-height: 1.5em;
+}
