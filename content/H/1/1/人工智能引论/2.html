@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 人工智能引论 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工智能引论</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/block.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/article.css">
+    <!--公式渲染-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <h1>人工智能引论 </h1>
+        </div>
+        <div class="menustrip">
+            <a href="../../../../../index.html">首页</a>
+            <a href="../../../index.html">人工智能</a>
+            <a href="index.html">人工智能引论</a>
+        </div>
+        <div class="mainbody">
+            <div class="leftstrip"></div>
+            <div class="main">
+                <h1>第2章 问题求解与搜索技术</h1>
+
+                <p><span class="lfkey">问题求解</span>（problem-solving）是人工智能中研究得较早而且比较成熟的一个领域，AI早期的目的是想通过计算技术来求解这样的一些问题：它们不存在已知的求解算法或求解方法非常复杂，而人使用其自身的智能都能较好地求解，人们在分析和研究了运用智能求解的方法之后，发现许多问题的求解方法都使用试探性的搜索方法。为模拟这些试探性的问题求解过程而发展的一种技术就称为搜索。在现实世界中，许多实际问题的求解都是采用试探搜索的方法来实现。</p>
+
+                <h2>2.1 问题的状态和状态空间</h2>
+
+                <p>利用搜索来求解问题是在某个可能的解空间内寻找一个解，这就首先要有一种恰当的解空间表示方法。一般把这种可能的解或解的一个步骤表示为一个状态，这些状态的全体形成一个<span class="lfkey">状态空间</span>（state space），然后在这个状态中以相应的搜索算法为基础来表示和求解问题。这种基于状态空间的问题表示和求解方法就是<span class="lfdef">状态空间法</span>。使用状态空间法，许多涉及智力的问题求解可看成是在状态空间中的搜索。</p>
+
+                <h3>2.1.1 状态空间的定义及其一般搜索方法</h3>
+
+                <p>在状态空间法中，<span class="lfkey">状态</span>（state）是为描述某些不同事物间的差别而引入的一组最少变量\(q_0,q_1,\cdots,q_n\)的有序集合，其形式为：\[Q=\left\lbrace q_0,q_1,\cdots,q_n\right\rbrace\]其中，每个元素\(q\)称为<span class="lfkey">状态变量</span>。给定每个状态变量一个值，就得到一个具体的状态。</p>
+
+                <p>使问题从一个状态变化为另一种状态的手段称为<span class="lfkey">操作符</span>或<span class="lfkey">算子</span>（operator）。操作符可能是某种动作（如下棋的走步）、过程、规则、数学算子、运算符号或逻辑运算符等。</p>
+
+                <p>问题的状态空间是一个表示该问题全部可能状态及其关系的集合。它包含所有可能的问题初始状态集合\(S\)、操作符集合\(F\)以及目标状态集合\(G\)。因此，可把状态空间记为三元组\((S,F,G)\)，其中\(S\subset Q\)，\(G\subset Q\)。</p>
+
+                <p>状态空间法求解问题的基本思路是：</p>
+
+                <ol>
+                    <li>将问题中的已知条件看成状态空间中初始状态；将问题中要求达到的目标看成状态空间中的目标；将问题中其他可能发生的情况看成状态空间的任一状态。</li>
+                    <li>设法在状态空间寻找一条路径，由初始状态出发，能够沿着这条路径达到目标状态。</li>
+                </ol>
+
+                <p>问题状态空间法的基本步骤是：</p>
+
+                <ol>
+                    <li>根据问题，定义出相应的状态空间，确定出状态的一般表示，它含有相关对象各种可能的排列。当然，这里仅仅是定义这个空间，而不必（又是也不可能）枚举出该状态的所有状态，但由此可以得出问题的初始状态、目标状态，并能够给出所有状态的一般表示。</li>
+                    <li>规定一组操作符（算子），能够作用于一个状态后过渡到另一个状态。</li>
+                    <li>决定一种搜索策略，使得能够从初始状态出发，沿某个路径达到目标状态。</li>
+                </ol>
+
+                <p>问题求解的过程是，应用规则响应的控制策略去遍历或搜索问题空间，直到找到从开始状态到目标状态的某个路径。由此可见，搜索是问题求解的基本技术。</p>
+
+                <blockquote><span class="lfkey">例2.1</span>&emsp;水壶问题。给定两个水壶，一个可装4加仑水，一个能装3加仑水。水壶上没有任何度量标记。有一水龙头可用来往湖中灌水。问题是怎样在能装4加仑的水壶里恰好只装2加仑水。
+                    <p>用状态空间法，该问题求解的过程为：</p>
+                    <p><span class="lfkey">（1）定义状态空间</span></p>
+                    <p>只关心水壶所装水的多少，可将问题进行抽象，用数偶\((x,y)\)来表示状态空间的任一状态。\(x\)表示4加仑水壶中所装的水量，\(y\)表示3加仑水壶中所装的水量。</p>
+                    <p>初始状态为\((0,0)\)，目标状态为\((2,?)\)，\(?\)表示水量不作规定。</p>
+                    <p><span class="lfkey">（2）确定一组操作</span></p>
+                </blockquote>
+
+            </div>
+            <div class="rightstrip"></div>
+        </div>
+    </div>
+
+    <div class="footer">Copyright © 2021 蓝风实验室</div>
+</body>
+
+</html>

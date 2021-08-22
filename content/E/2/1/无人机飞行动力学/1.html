@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 无人机飞行动力学 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无人机飞行动力学</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/block.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/article.css">
+    <!--公式渲染-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <h1>无人机飞行动力学 </h1>
+        </div>
+        <div class="menustrip">
+            <a href="../../../../../index.html">首页</a>
+            <a href="../../../index.html">无人机飞行控制</a>
+            <a href="index.html">无人机飞行动力学</a>
+        </div>
+        <div class="mainbody">
+            <div class="leftstrip"></div>
+            <div class="main">
+                <h1>第1章 飞行方程</h1>
+
+                <p>无人机飞行方程包括动力学方程和运动学方程，是研究无人机飞行控制的基础。</p>
+
+                <h2>1.1 常见坐标系及其转换</h2>
+
+                <h3>1.1.1 常见坐标系</h3>
+
+                <h4>1.1.1.1 地面坐标系</h4>
+
+                <p>地面坐标系\(O_gx_gy_gz_g\)是固定在地球表面的一种坐标系。它的原点\(O_g\)位于地面任意选定的某固定点（例如飞机起飞点）；\(O_gx_g\)轴指向地面某任意选定方向；\(O_gz_g\)轴铅锤向下；\(O_gy_g\)轴垂直于\(O_gx_gz_g\)平面，按右手定则确定。</p>
+
+                <p>所以，机体坐标系中，飞机质心运动方程为 \[\left\lbrace \begin{aligned} & m\left(\frac{\rm{d}u}{\rm{d}t}+qw-rv\right)=T\cos\varphi_T - D\cos\alpha\cos\beta-C\cos\alpha\sin\beta +L\sin\alpha - mg\sin\phi\sin\theta \\ & m\left(\frac{\rm{d}v}{\rm{d}t}+ru-pw\right)=-D\sin\beta
+                    + C\cos\beta + mg \sin\phi\cos\theta \\ & m\left(\frac{\rm{d}w}{\rm{d}t}+pv-qu\right)=-T\sin\varphi_T - D\sin\alpha\cos\beta-C\sin\alpha\sin\beta +L\cos\alpha - mg\cos\phi\cos\theta \end{aligned} \right.\]
+                </p>
+
+            </div>
+            <div class="rightstrip"></div>
+        </div>
+    </div>
+    <div class="footer">Copyright © 2021 蓝风实验室</div>
+</body>
+
+</html>

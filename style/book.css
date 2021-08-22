@@ -1,0 +1,73 @@
+/* 单篇文章模板 */
+
+p {
+    font-family: 宋体;
+}
+
+blockquote {
+    text-indent: 2em;
+}
+
+table {
+    margin: 2em auto;
+    width: 90%;
+}
+
+table th {
+    border: 1px solid lightgray;
+    padding: 5px;
+    text-align: center;
+    background: var(--strip-Color);
+    color: var(--main-Color);
+}
+
+table td {
+    border: 1px solid lightgray;
+    padding: 5px;
+}
+
+table a {
+    font-family: var(--song-font);
+}
+
+.main h1 {
+    font-family: var(--title-font);
+    font-size: var(--h2-size);
+    line-height: 1.5em;
+    color: var(--main-Color);
+    border-bottom: var(--main-Color) solid 2px;
+}
+
+.main h2 {
+    font-family: var(--title-font);
+    font-size: var(--h3-size);
+    line-height: 1.5em;
+    color: var(--main-Color);
+    background-color: var(--strip-Color);
+}
+
+.main h3 {
+    font-family: var(--title-font);
+    font-size: var(--h4-size);
+    line-height: 1.5em;
+}
+
+
+/* 目录列表 */
+
+.menutable {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* 目录连接 */
+
+.menuitem {
+    /* 使用等宽字体 */
+    font-family: var(--code-font);
+    flex: 30%;
+    line-height: 1.8em;
+    margin: 5px;
+    text-decoration: none;
+}

@@ -1,0 +1,180 @@
+/* 基础样式 */
+
+:root {
+    --main-Color: #4B7E8F;
+    --strip-Color: #DFE0DB;
+    --mini-size: 12pt;
+    --body-size: 14pt;
+    --h4-size: 14pt;
+    --h3-size: 16pt;
+    --h2-size: 20pt;
+    --h1-size: 24pt;
+    --kai-font: Cambria, 楷体;
+    --song-font: 'Times New Roman', Times, serif;
+    --code-font: monospace, '等线';
+    --title-font: Arial, '黑体';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* body 样式 */
+
+body {
+    margin: 0;
+    font-size: var(--body-size);
+    text-align: justify;
+    line-height: 1.5em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* 标题 */
+
+.header {
+    text-align: center;
+    padding: 10pt;
+    background: var(--main-Color);
+    color: white;
+}
+
+
+/* 菜单 */
+
+.menustrip {
+    font-size: var(--mini-size);
+    overflow: hidden;
+    line-height: 2em;
+    background-color: var(--strip-Color);
+    padding: 0px;
+}
+
+.menustrip a {
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+
+/* 主体部分 */
+
+.mainbody {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+/* 边栏 */
+
+.leftstrip {
+    flex: 10%;
+}
+
+
+/* 主要的内容区域 */
+
+.main {
+    padding: 2em;
+    width: 1000px;
+    margin: 10px;
+    min-height: 600px;
+}
+
+
+/* 右侧边栏 */
+
+.rightstrip {
+    flex: 10%;
+}
+
+
+/* 页脚 */
+
+.footer {
+    font-size: var(--mini-size);
+    padding: 5px;
+    text-align: center;
+    background: var(--strip-Color);
+}
+
+.lfdef {
+    font-family: var(--title-font);
+    color: red;
+}
+
+.lfkey {
+    font-family: var(--title-font);
+    color: blue;
+}
+
+.lfnote {
+    font-family: var(--title-font);
+    color: green;
+}
+
+.author {
+    font-family: var(--kai-font);
+}
+
+
+/* 目录列表 */
+
+.menutable {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* 目录连接 */
+
+.menuitem {
+    /* 使用等宽字体 */
+    font-family: var(--code-font);
+    flex: 30%;
+    line-height: 1.8em;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.linktable {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--strip-Color);
+    margin-top: 0.5em;
+}
+
+.linkitem {
+    /* 使用等宽字体 */
+    font-family: var(--code-font);
+    flex: 30%;
+    line-height: 1.8em;
+    margin: 0px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.5em;
+    color: silver;
+}
+
+.linkitem a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .mainbody {
+        flex-direction: col;
+    }
+    .main {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menuitem {
+        flex: 45%;
+    }
+}
