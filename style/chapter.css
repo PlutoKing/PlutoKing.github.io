@@ -1,9 +1,5 @@
 /* 单篇文章模板 */
 
-p {
-    font-family: 宋体;
-}
-
 blockquote {
     text-indent: 2em;
 }
@@ -19,7 +15,6 @@ blockquote {
     font-family: var(--title-font);
     font-size: var(--h2-size);
     line-height: 1.5em;
-    text-align: center;
     color: var(--main-color);
     border-bottom: var(--main-color) solid 2px;
 }
@@ -53,4 +48,10 @@ blockquote {
 .linkitem a {
     text-decoration: none;
     color: var(--main-color);
+}
+
+table#imgtable {
+    margin: 0 auto;
+    font-family: var(--song-font);
+    text-align: center;
 }

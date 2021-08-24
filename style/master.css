@@ -1,0 +1,29 @@
+/* 主要样式 */
+
+.main h1 {
+    font-family: var(--title-font);
+    font-size: var(--h1-size);
+    line-height: 1.5em;
+    color: var(--main-color);
+    border-bottom: var(--main-color) solid 3px;
+}
+
+.main h2 {
+    font-family: var(--title-font);
+    font-size: var(--h2-size);
+    line-height: 1.5em;
+    background: var(--strip-color);
+}
+
+.main h3 {
+    font-family: var(--title-font);
+    font-size: var(--h3-size);
+    line-height: 1.25em;
+}
+
+.main h4 {
+    font-family: var(--title-font);
+    font-size: var(--h4-size);
+    line-height: 1.25em;
+    text-indent: 2em;
+}

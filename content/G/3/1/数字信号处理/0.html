@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 数字信号处理 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字信号处理 绪论</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/chapter.css">
+    <!--公式渲染-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <div class="header">
+            <h1>数字信号处理</h1>
+            <div><span class="author">高西全&emsp;丁美玉</span>&emsp;编著</div>
+        </div>
+        <div class="menustrip">
+            <a href="../../../../../index.html">首页</a>
+            <a href="../../../index.html">文学</a>
+            <a href="index.html">数字信号处理</a>
+        </div>
+        <div class="content">
+            <div class="nav"></div>
+            <div class="main">
+                <h1>绪论</h1>
+
+                <h2>0.1 数字信号处理的基本概念</h2>
+
+                <p>几乎在所有的工程技术领域中都会涉及到信号处理问题，其信号表现形式有电、磁、机械以及热、光、声等。信号处理一般包括数据采集以及对信号进行分析、变换、综合、估值和识别等。这里的信号有4中：</p>
+                <ol>
+                    <li>连续信号（即模拟信号），它的幅度和时间都取连续变量；</li>
+                    <li>时域离散信号，其幅度取连续变量，而时间取离散值；</li>
+                    <li>幅度离散信号，其时间变量取连续值，幅度取离散值，如振幅键控信号；</li>
+                    <li>数字信号，它的幅度和时间都取离散值。</li>
+                </ol>
+
+                <p>一般来说，数字信号处理的对象是数字信号，模拟型号处理的对象是模拟信号。这里关键的问题是两种信号处理系统对信号处理的方式不同，数字信号处理是采用数值计算的方法完成对信号的处理，而模拟信号处理则是通过一些模拟期间（例如晶体管、运算放大器、电阻、电容、电感等）组成的网络来完成对信号的处理。</p>
+                <p>例如，图0.1.1(a)所示的是一个简单的模拟高通滤波器，它是由电阻R和电容C组成的，而图0.1.1(b)所示的则是一个简单的数字高通滤波器，它是由一个加法器、一个乘法器和一个延时器组成的。因此，简单地说，数字信号处理就是用数值计算的方法对信号进行处理，这里<span style="font-family: 宋体;">“处理”</span>的实质是<span style="font-family: 宋体;">“运算”</span>，处理对象则包括模拟信号和数字信号。</p>
+
+                <table id="imgtable">
+                    <tr>
+                        <td><img src="figures/hpf_m.svg" title="图0.0.1 高通滤波器简型"></td>
+                        <td><img src="figures/hpf_d.svg" title="图0.0.1 高通滤波器简型"></td>
+                    </tr>
+                    <tr>
+                        <td>(a) 简单的模拟高通滤波器</td>
+                        <td>(b) 简单的数字高通滤波器</td>
+                    </tr>
+                </table>
+                <div class="imgtitle">图0.1.1 高通滤波器简型</div>
+
+                <h2>0.2 数字信号处理的实现方法</h2>
+
+                <p>数字信号处理的主要对象是数字信号，且是采用数值运算的方法大道处理目的的。因此，其实现方法不同于模拟信号处理的实现方法。数字信号处理的实现方法基本上可以分成两种，及软件实现方法和硬件实现方法。软件实现方法指的是按照具体的要求和算法，设计硬件结构图，用乘法器、加法器、延时器、控制器、存储器以及输入输出接口等基本不见实现的一种方法。显然，软件实现灵活，只要改变程序中的有关参数，例如只改变图0.1.1(b)中的参数\(a\)，数字滤波器可能就是低通、带通或高通滤波器，但是运算速度慢，一般达不到实时处理，因此这种方法适合于算法研究和仿真。硬件实现运算速度快，可以达到实时处理要求，但是不灵活。</p>
+
+                <p>用单片机实现的方法属于软硬结合实现，现在单片机发展很快，功能也很强，配以数字信号处理软件，既灵活，速度有笔软件方法快。采用专用的数字信号处理芯片（DSP芯片）是目前发展最快、应用最广的一种方法。</p>
+
+                <div class="linktable">
+                    <div class="linkitem">最初章</div>
+                    <div class="linkitem"><a href="index.html">目录</a></div>
+                    <div class="linkitem"><a href="1.html">第一章</a></div>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sidebar "></div>
+        </div>
+
+    </div>
+    </div>
+    <div class="footer ">© Copyright @ 2021 by 蓝风实验室</div>
+</body>
+
+</html>

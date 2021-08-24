@@ -1,0 +1,104 @@
+/* 布局排版 */
+
+
+/* 头 */
+
+.header {
+    padding: var(--normal-margin);
+    color: white;
+    background: var(--main-color);
+    text-align: center;
+}
+
+.header h1 {
+    padding: 0.5em;
+    margin: 0px;
+    font-size: var(--h1-size);
+    line-height: 1.5em;
+}
+
+
+/* 菜单栏 */
+
+.menustrip {
+    vertical-align: center;
+    background: var(--strip-color);
+}
+
+.menustrip a {
+    margin: 0.5em;
+    font-size: var(--mini-size);
+    color: black;
+    text-decoration: none;
+}
+
+.menustrip a:hover {
+    color: var(--main-color);
+}
+
+
+/* 容器 */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+/* 导航 */
+
+.nav {
+    flex: 10%;
+}
+
+
+/* 页面主题 */
+
+.main {
+    padding: 0.5em 0.5em;
+    width: 1000px;
+}
+
+
+/* 侧栏 */
+
+.sidebar {
+    flex: 10%;
+}
+
+
+/* 尾 */
+
+.footer {
+    padding: 0.2em;
+    margin: 0em;
+    font-size: var(--mini-size);
+    text-align: center;
+    background: var(--strip-color);
+}
+
+
+/* 目录列表 */
+
+.menutable {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menutable a {
+    flex: 30%;
+    flex-grow: 0;
+    padding: 10px;
+    font-family: var(--code-font);
+    line-height: 1em;
+    color: black;
+    text-decoration: none;
+    cursor: hand;
+}
+
+.menutable a:hover {
+    color: var(--main-color);
+    border-radius: 5px;
+    background: #F0F0F0;
+}
