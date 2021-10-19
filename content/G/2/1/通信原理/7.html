@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- 数字信号处理 -->
+<!-- 通信原理 -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字信号处理 第一章</title>
+    <title>通信原理 第七章</title>
     <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
     <link rel="stylesheet" type="text/css" href="../../../../../style/layout.css">
     <link rel="stylesheet" type="text/css" href="../../../../../style/chapter.css">
@@ -20,28 +20,26 @@
 
     <div>
         <div class="header">
-            <h1>数字信号处理</h1>
-            <div><span class="author">高西全&emsp;丁美玉</span>&emsp;编著</div>
+            <h1>通信原理</h1>
         </div>
         <div class="menustrip">
             <a href="../../../../../index.html">首页</a>
             <a href="../../../index.html">雷达与通信</a>
-            <a href="index.html">数字信号处理</a>
+            <a href="index.html">通信原理</a>
         </div>
         <div class="content">
             <div class="nav"></div>
             <div class="main">
-                <h1>第一章 时域离散信号和时域离散系统</h1>
 
-                <h2>1.1 引言</h2>
+                <h1>第七章 数字带通传输系统</h1>
 
-                <p>信号通常是一个自变量或几个自变量的函数。如果仅有一个自变量，则称为一维信号；如果有两个以上的自变量，则称为多维信号。本书仅研究一维数字信号处理的理论与技术。物理信号的自变量有多种，可以是时间、距离、温度、位置等，本书一般把信号看作时间的函数。针对信号的自变量和函数值的取值情况，信号可分为以下三种。</p>
+                <h2>7.1 二进制数字调制原理</h2>
 
-                <h2>1.2 时域离散信号</h2>
+                <h3>7.1.1 二进制振幅键控</h3>
 
-                <p>实际中遇到的信号一般是模拟信号，对它进行等间隔采样便可以得到时域离散信号。</p>
-                <p>假设模拟信号为\(x_{\rm{a}}(t)\)，以采样间隔\(T\)对它进行等间隔采样，得到： \[x(n)=x_{\rm{a}}(t)\mid_{t=nT}\,=x_{\rm{a}}(nT)\]
-                </p>
+                <h4>1. 基本原理</h4>
+
+                <p>振幅键控是利用载波的幅度变化来传递数字信息，而其频率和初始相位保持不变。在2ASK中，载波的幅度只有两种变化状态，分别对应二进制信息“0”或“1”。\[e_{\rm{OOK}}(t)=\begin{cases}A\cos \omega_c t & \text{以概率}P\text{发送“1”时}\\ 0 & \text{以概率}1-P \text{发送“0”时}\end{cases} \tag{7.1.1}\]典型波形如图所示</p>
 
                 <div class="linktable">
                     <div class="linkitem"><a href="0.html">绪论</a></div>

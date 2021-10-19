@@ -7,7 +7,7 @@
     --kai-font: Cambria, 楷体;
     --song-font: 'Times New Roman', Times, serif;
     --code-font: monospace, '等线';
-    --title-font: Arial, '黑体';
+    --title-font: 'Arial', '黑体';
     /* 字号 */
     --h1-size: 22pt;
     --h2-size: 18pt;
@@ -18,7 +18,7 @@
     /* 颜色 */
     --main-color: #4B7E8F;
     --strip-color: #DFE0DB;
-    --highlight: #2AAEFF;
+    --highlight: #3484E4;
     --positive: #1DBF71;
     --negative: #EB4D5C;
     --warning: #FEB64E;
@@ -46,6 +46,7 @@ p {
     margin: 0.5em 0px;
     font-family: var(--song-font);
     text-indent: 2em;
+    text-align: justify;
 }
 
 
@@ -61,8 +62,9 @@ img {
 /* 无序列表 */
 
 ul {
-    font-family: var(--kai-font);
+    font-family: var(--song-font);
     margin: 0em;
+    margin-left: 2em;
     padding-left: 2em;
 }
 
@@ -70,13 +72,44 @@ ul {
 /* 有序列表 */
 
 ol {
-    font-family: var(--kai-font);
+    font-family: var(--song-font);
     margin: 0em;
+    margin-left: 2em;
     padding-left: 2em;
 }
 
 li {
     margin: 0em;
+}
+
+blockquote {
+    padding: 0.5em 2em;
+    margin: 0px;
+    font-family: var(--song-font);
+    line-height: 1.5em;
+    text-align: justify;
+    text-indent: 0em;
+    background-color: #f0f0f0;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: var(--song-font);
+}
+
+table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+caption {
+    font-family: var(--song-font);
 }
 
 .lfdef {

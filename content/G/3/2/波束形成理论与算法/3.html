@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- 数字信号处理 -->
+<!-- 波束形成理论与算法 -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字信号处理 第一章</title>
+    <title>波束形成理论与算法 第三章</title>
     <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
     <link rel="stylesheet" type="text/css" href="../../../../../style/layout.css">
     <link rel="stylesheet" type="text/css" href="../../../../../style/chapter.css">
@@ -20,28 +20,29 @@
 
     <div>
         <div class="header">
-            <h1>数字信号处理</h1>
-            <div><span class="author">高西全&emsp;丁美玉</span>&emsp;编著</div>
+            <h1>波束形成理论与算法</h1>
         </div>
         <div class="menustrip">
             <a href="../../../../../index.html">首页</a>
             <a href="../../../index.html">雷达与通信</a>
-            <a href="index.html">数字信号处理</a>
+            <a href="index.html">波束形成理论与算法</a>
         </div>
         <div class="content">
             <div class="nav"></div>
             <div class="main">
-                <h1>第一章 时域离散信号和时域离散系统</h1>
+                <h1>第三章 波束主瓣设计</h1>
 
-                <h2>1.1 引言</h2>
+                <h2>3.1 引言</h2>
 
-                <p>信号通常是一个自变量或几个自变量的函数。如果仅有一个自变量，则称为一维信号；如果有两个以上的自变量，则称为多维信号。本书仅研究一维数字信号处理的理论与技术。物理信号的自变量有多种，可以是时间、距离、温度、位置等，本书一般把信号看作时间的函数。针对信号的自变量和函数值的取值情况，信号可分为以下三种。</p>
+                <h2>3.2 最小误差逼近法</h2>
 
-                <h2>1.2 时域离散信号</h2>
+                <h3>3.2.1 误差范数表述</h3>
 
-                <p>实际中遇到的信号一般是模拟信号，对它进行等间隔采样便可以得到时域离散信号。</p>
-                <p>假设模拟信号为\(x_{\rm{a}}(t)\)，以采样间隔\(T\)对它进行等间隔采样，得到： \[x(n)=x_{\rm{a}}(t)\mid_{t=nT}\,=x_{\rm{a}}(nT)\]
-                </p>
+                <p>首先定义向量的范数表达式，范数与该向量是行向量还是列向量无关，这里不妨假设一个长度为\(N\)的行向量\(\mathbf{z}=\left[z_1,z_2,\cdots,z_N\right]\)，其\(l_q\)范数定义为\[\|\mathbf{z}\|_q=\left(\sum_{n=1}^{N}|z_n|^q\right)^{1/q}\]</p>
+
+                <p>比较典型的是\(q=1,2,or\, \infty\)。\(l_2\)范数又称为Euclidean范数，\(l_{\infty}\)范数又被称为Chebyshev范数。\(l_2\)范数\(\|\mathbf{z}\|_2\)可以省略下标，简写成\(\|\mathbf{z}\|\)。\(q=\infty\)时对应的\(l_{\infty}\)范数为\[\|\mathbf{z}\|_q=\max_n|z_n|\]</p>
+
+                <p>波束图综合问题就是求取波束形成加权向量\(\mathbf{w}\)，使得设计出的波束响应逼近与期望波束响应，即\[B\left(\theta\right)\approx B_d\left(\theta\right),\, \forall \theta \in \Theta\]式中，\(B\left(\theta\right)=\mathbf{w}^H\mathbf{a}\left(\theta\right)\)与\(B_d\left(\theta\right)\)分别表示\(\theta\)方向的设计波束响应与期望波束响应；\(\Theta\)表示需要进行逼近处理的方位区域。</p>
 
                 <div class="linktable">
                     <div class="linkitem"><a href="0.html">绪论</a></div>

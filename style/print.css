@@ -1,0 +1,73 @@
+/* 头 */
+
+.header {
+    display: none;
+}
+
+.menustrip {
+    display: none;
+}
+
+
+/* 尾 */
+
+.footer {
+    display: none;
+}
+
+
+/* 目录列表 */
+
+.linktable {
+    display: none;
+}
+
+
+/* 导航 */
+
+.nav {
+    display: none;
+}
+
+
+/* 页面主题 */
+
+.main {
+    padding: 2em 2em;
+    font-size: 12pt;
+}
+
+
+/* 侧栏 */
+
+.sidebar {
+    display: none;
+}
+
+.main h1 {
+    font-family: var(--title-font);
+    font-size: var(--h1-size);
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.main h2 {
+    font-family: var(--title-font);
+    font-size: var(--h2-size);
+    line-height: 1.5em;
+    color: black;
+    border-bottom: 0px;
+}
+
+.main h3 {
+    font-family: var(--title-font);
+    font-size: var(--h3-size);
+    line-height: 1.5em;
+    background-color: transparent;
+}
+
+.lfdef {
+    font-family: var(--song-font);
+    font-style: italic;
+    color: black;
+}

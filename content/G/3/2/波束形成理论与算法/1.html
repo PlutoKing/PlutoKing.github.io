@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 波束形成理论与算法 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>波束形成理论与算法 第一章</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/chapter.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/print.css" media="print">
+    <!--公式渲染-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <div class="header">
+            <h1>波束形成理论与算法</h1>
+        </div>
+        <div class="menustrip">
+            <a href="../../../../../index.html">首页</a>
+            <a href="../../../index.html">雷达与通信</a>
+            <a href="index.html">波束形成理论与算法</a>
+        </div>
+        <div class="content">
+            <div class="nav"></div>
+            <div class="main">
+                <h1>第一章 波束形成基础</h1>
+
+                <h2>1.1 引言</h2>
+
+                <p>本文主要介绍波束形成系统模型及最小均方无畸变响应（Minimum Variance Distortionless Response, MVDR）波束形成器、最小均方误差（Minimum Mean-Square Error, MMSE）波束形成器、最大信噪比（Maximum Signal to Noise Ratio, MSNR）波束形成器、线性约束最小方差（Linear Constraints Minimum Variance, LCMV）波束形成器。首先，建立阵列信号处理的数学模型，详细介绍阵列结构、信号模型和阵列输出。其次，介绍各个波束形成器的计算公式。最后，通过仿真得出波束图。</p>
+
+                <h2>1.2 系统模型</h2>
+
+                <h3>1.2.1 基阵</h3>
+
+                <p>基阵的组成结构影响基阵的空间特性，基阵的组成结构包括两部分：阵元排列几何形状与各阵元的方向性。</p>
+                <p>基阵依据阵元排列的几何形状可以分为三类：线阵、平面阵和体积阵。</p>
+                <p> 对于一个由\(M\)个阵元组成的阵列，选择某一空间参考点，以该空间参考点为坐标原点，第\(m\)个阵元的位置可以用三维坐标表示\[\mathbf{r}_m = \left[x_m,y_m,z_m\right]^T\]式中，分别为第个阵元的\(x\)、\(y\)、\(z\)坐标。 于是可构造基阵全部阵元位置矩阵为\[\mathbf{R}=\left[\mathbf{r}_1,\mathbf{r}_2,\cdots,\mathbf{r}_M\right]\]
+                </p>
+
+                <h3>1.2.2 信号模型</h3>
+
+                <p>假设一平面波点源从空间角\(\Omega=\left(\theta,\phi\right)\)入射到基阵，可以定义信号传播方向的单位矢量为\[\mathbf{\alpha}=\left[\sin\phi\cos\theta,\sin\phi\cos\theta,\cos\phi\right]^T\]于是，信号到达第\(m\)个阵元相对于参考点的时间延时为\[\tau_m\left(\Omega\right)=\mathbf{r}_m^T\alpha\left(\Omega\right)/c,\,m=1,2,\cdots,M\]式中，\(c\)为电磁波传播速度。</p>
+
+
+                <p>令信号的载波为\(e^{j\omega t}\)，以平面波形式在空间沿\(\Omega=\left(\theta,\phi\right)\)方向传播，设基准点处的信号为\(s\left(t\right)e^{j\omega t}\)，则第个阵元接收的信号为\[\begin{aligned}s_m(t)&=s(t-\tau_m)e^{j\omega(t-\tau_m)}\\ & = s(t-\tau_m)e^{j(\omega t - {\mathbf{r}}_m^T{\mathbf{k}})}\end{aligned}\]式中，\({\mathbf{k}}=k{\boldsymbol{\alpha}}=\omega/c\boldsymbol{\alpha}\)为波数向量。</p>
+
+                <p>在通信中，信号的频带比载波值小很多，所以的变化相对缓慢，延时，固有，即信号包络在各阵元上的差异可忽略，称为窄带信号。 因此可将阵列信号用向量形式表示为
+                </p>
+
+                <h3>1.2.3 阵列输出</h3>
+
+                <p>整个阵列接收到的数据为\[\mathbf{x}\left(t\right)=\sum_{k=1}^{K}s_k\left(t\right)+\mathbf{n}\left(t\right) = \mathbf{A}\mathbf{s}\left(t\right)+\mathbf{n}\left(t\right) \]阵列输出\[y\left(t\right)=\sum_{i=1}^{M}w^*_i\left(\theta,\phi\right)x_i\left(t\right)=\mathbf{w}^H\left(\theta,\phi\right)\mathbf{x}\left(t\right)\]式中，\(\mathbf{w}\)为权重向量，是波束形成算法需要求解的关键。
+                </p>
+
+                <p>求解出权重向量，波束响应，即波束方向图为\[F\left(\theta,\phi\right) = \mathbf{w}^H\mathbf{a}\left(\theta,\phi\right) \]
+                </p>
+
+                <h2>1.3 波束形成问题描述</h2>
+
+                <p>假设远场空间有一个感兴趣的信号\(s_d\left(t\right)\)，称为期望信号，其波达方向为\(\theta_d\)，和\(J\)个不感兴趣的信号\(s_{ij},\left( j=1,2,\cdots,J\right)\)，称为干扰信号，其波达方向分别为\(\theta_{ij}\)，每个阵元上的加性白噪声为，则第\(m\)个阵元接收到的信号为\[x_m\left(t\right)=a_m\left(\theta_d\right)s_d\left(t\right)+\sum_{j=1}^{J}a_m\left(\theta_{ij}\right)s_{ij}\left(t\right)+n_m\left(t\right)\]对于整个阵列，写成矩阵形式为\[\begin{aligned}
+                    \mathbf{x}\left(t\right)& =\mathbf{a}\left(\theta_d\right)s_d\left(t\right)+\sum_{j=1}^{J}\mathbf{a}\left(\theta_{ij}\right)s_{ij}\left(t\right)+{\mathbf{n}}\left(t\right)\\ & = \sum_{k=1}^{K}\mathbf{a}\left(\theta_{k}\right)s_{k}\left(t\right)+{\mathbf{n}}\left(t\right)
+                    \end{aligned}\]式中，\(\mathbf{a}\left(\theta_k\right)=\left[ a_1\left(\theta_k\right),a_2\left(\theta_k\right),\cdots,a_M\left(\theta_k\right)\right]\)，表示来自波达方向\(\theta_k\)的发射信源的方向向量，\(k=1,2,\cdots,K\)，\(K=1+J\)。
+                </p>
+
+                <p>\(N\)个快拍的波束形成器输出\(y\left(t\right)=\mathbf{w}^H\left(\theta\right)\mathbf{x}\left(t\right)\)的平均功率为\[\begin{aligned} P\left(w\right) & = \dfrac{1}{N}\sum_{t=1}^{N}\left| y\left(t\right)\right| ^2=\dfrac{1}{N}\sum_{t=1}^{N}\left| \mathbf{w}^H\mathbf{x}\left(t\right)\right|
+                    ^2 \\ & = \left| \mathbf{w}^H\mathbf{a}\left(\theta_d\right)\right| ^2\dfrac{1}{N}\sum_{t=1}^{N}\left| d\left(t\right)\right| ^2 +\sum_{j=1}^{J}\left[\dfrac{1}{N}\sum_{t=1}^{N}\left| i_j\left(t\right)\right| ^2\right]\left| \mathbf{w}^H\mathbf{a}\left(\theta_{ij}\right)\right|
+                    ^2 + \dfrac{1}{N}\left\|\mathbf{w}\right\|^2 \sum_{t=1}^{N}\left\| {\mathbf{n}}\left(t\right)\right\| ^2\\ \end{aligned}\]
+                </p>
+
+                <p>这里忽略了不同信号之间的相互作用项，即交叉项\(s_{ij}\left(t\right)s_{ik}^*\left(t\right)\)，当\(N\to\infty\)时，上式可写为\[\begin{aligned} P\left(w\right) & =\mathrm{E}\left[\left| y\left(t\right)\right| ^2\right]=\mathbf{w}^H\mathrm{E}\left[\mathbf{x}\left(t\right)\mathbf{x}^H\left(t\right)\right]\mathbf{w}=\mathbf{w}^H{\mathbf{Rw}}
+                    \\ & =\mathrm{E}\left[\left|d\left(t\right) \right|^2 \right]\left|\mathbf{w}^H\mathbf{a}\left(\theta_d\right) \right| ^2+\sum_{j=1}^{J}\mathrm{E}\left[\left|i_j\left(t\right) \right\| ^2\right]\left|\mathbf{w}^H\mathbf{a}\left(\theta_{ij}\right)
+                    \right| ^2+\sigma^2_n\left\| \mathbf{w}\right\|^2 \\ \end{aligned}\]式中，\(\mathbf{R} = \mathrm{E}\left[ \mathbf{x}\left(t\right)\mathbf{x}^H\left(t\right)\right]\)为阵列输出的协方差矩阵。为了保证来自方向\(\theta_d\)期望信号的正确接收，并完全已知其他\(J\)个干扰，很容易根据上式得到关于权重的约束条件\[\left\lbrace\begin{aligned}
+                    & \mathbf{w}^H\mathbf{a}\left(\theta_d\right)=1 \\ & \mathbf{w}^H\mathbf{a}\left(\theta_{ij}\right)=0 \\ \end{aligned}\right. \]该约束条件被称为波束<span style="font-family: 宋体;">“置零条件”</span>，因为它强迫接收阵列波束方向图的<span style="font-family: 宋体;">“零点”</span>指向所有个干扰信号。在满足约束条件时，保证噪声最小，则优化目标函数为\[\min_\mathbf{w}
+                    \mathrm{E}\left[\left|y\left(t\right) \right|^2\right]=\min_\mathbf{w} \mathbf{w}^H\mathbf{Rw} \]则波束形成问题可以表述为\[\begin{aligned} \min_\mathbf{w} \quad& \mathbf{w}^H{\mathbf{Rw}} \\ \mathrm{s.t.} \quad& \left\lbrace\begin{aligned} & \mathbf{w}^H\mathbf{a}\left(\theta_d\right)=1
+                    \\ & \mathbf{w}^H\mathbf{a}\left(\theta_{ij}\right)=0 \\ \end{aligned}\right. \end{aligned} \]
+                </p>
+
+                <img src="figures/mvdr.svg" title="MVDR波束形成">
+
+                <img src="figures/均匀线阵10阵元10度角波束图.svg" title="均匀线阵10阵元10度角波束图">
+
+                <div class="linktable">
+                    <div class="linkitem"><a href="0.html">绪论</a></div>
+                    <div class="linkitem"><a href="index.html">目录</a></div>
+                    <div class="linkitem"><a href="2.html">第二章</a></div>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sidebar "></div>
+        </div>
+
+    </div>
+    </div>
+    <div class="footer ">© Copyright @ 2021 by 蓝风实验室</div>
+</body>
+
+</html>

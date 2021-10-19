@@ -1,12 +1,9 @@
 /* 单篇文章模板 */
 
-blockquote {
-    text-indent: 2em;
-}
-
 .main h1 {
     font-family: var(--title-font);
     font-size: var(--h1-size);
+    font-weight: normal;
     line-height: 1.5em;
     text-align: center;
 }
@@ -14,6 +11,7 @@ blockquote {
 .main h2 {
     font-family: var(--title-font);
     font-size: var(--h2-size);
+    font-weight: normal;
     line-height: 1.5em;
     color: var(--main-color);
     border-bottom: var(--main-color) solid 2px;
@@ -22,8 +20,18 @@ blockquote {
 .main h3 {
     font-family: var(--title-font);
     font-size: var(--h3-size);
+    font-weight: normal;
     line-height: 1.5em;
     background-color: var(--strip-color);
+}
+
+.main h4 {
+    margin: 0em;
+    font-family: var(--title-font);
+    font-size: var(--h4-size);
+    font-weight: normal;
+    line-height: 1.5em;
+    text-indent: 2em;
 }
 
 .linktable {

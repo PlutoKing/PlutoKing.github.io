@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 飞机设计 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞机设计 第二章</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/chapter.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../style/print.css" media="print">
+    <!--公式渲染-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <div class="header">
+            <h1>飞机设计</h1>
+        </div>
+        <div class="menustrip">
+            <a href="../../../../../index.html">首页</a>
+            <a href="../../../index.html">飞行器设计</a>
+            <a href="index.html">飞机设计</a>
+        </div>
+        <div class="content">
+            <div class="nav"></div>
+            <div class="main">
+                <h1>第二章 重量估算</h1>
+                <h2>2.1 方法概述</h2>
+
+                <p>为了方便起见，通常将起飞重量\(W_{\rm{to}}\)分解为 \[ W_{\rm{to}} = W_{\rm{oe}}+W_{\rm{f}}+W_{\rm{pl}} \label{eq:wto} \tag{2.1}\] 式中，\(W_{\rm{oe}}\)为使用空重（operating weight empty），\(W_{\rm{f}}\)为任务燃油重量（mission fuel weight），\(W_{\rm{pl}}\)为任务载荷重量（payload weight）。
+                    使用空重\(W_{\rm{oe}}\)为通常表示为： \begin{equation} W_{\rm{oe}}=W_{\rm{e}}+W_{\rm{tfo}}+W_{\rm{crew}} \label{eq:we} \end{equation} 式中，\(W_{\rm{e}}\)为空重，\(W_{\rm{tfo}}\)为废油重量，\(W_{\rm{crew}}\)为机组成员重量。 空重\(W_{\rm{e}}\)有时可以表示为 \begin{equation}
+                    W_{\rm{e}}=W_{\rm{ME}}+W_{\rm{FEQ}} \end{equation} 式中，\(W_{\rm{ME}}\)为制造空重（manufacturers empty weight），\(W_{\rm{FEQ}}\)为固定设备重量。固定设备通常包括：
+                    <ul>
+                        <li>航电设备；</li>
+                        <li>空调设备；</li>
+                        <li>雷达设备；</li>
+                        <li>辅助动力单元（Auxiliary Power Unit, APU）；</li>
+                        <li>家具和内饰；</li>
+                        <li>其他设备。</li>
+                    </ul>
+                </p>
+                <p>
+                    在此，有两个关键点需要关注：
+                </p>
+
+                <blockquote>
+                    <a class="lfkey">第1点</a>&emsp;从非常基本的考虑来估计所需的任务燃料重量并不是困难的，这将在<br>
+                    <a class="lfkey">第2点</a>&emsp;前面所述的12种飞机，其\(\log W_{\rm{to}}\)和\(\log W_{\rm{e}}\)之间存在线性关系。
+                </blockquote>
+
+                <p>基于这两点，估算\(W_{\rm{to}}\)、\(W_{\rm{e}}\)、\(W_{\rm{f}}\)的基本步骤如下：</p>
+
+                <p><a class="lfkey">第1步</a>&emsp;确定任务载荷重量\(W_{\rm{pl}}\)。</p>
+
+                <p><a class="lfkey">第2步</a>&emsp;估计一个起飞重量的值\(W_{\rm{to}_{\rm{guess}}}\)。</p>
+
+                <h2>2. 任务载荷和机组成员</h2>
+                <p>任务载荷重量\(W_{\rm{pl}}\)通常在任务规范中进行明确。任务载荷重量一般包含以下内容：</p>
+                <ul>
+                    <li>乘客和行李；</li>
+                    <li>货物；</li>
+                    <li>军事载荷，如弹药、炸弹、导弹和各种备用物或吊舱，备用物和吊舱通常外挂，因此影响飞机阻力。</li>
+                </ul>
+                <p>对于商用飞机中的乘客，一般认为每个人则重量为80kg，并且在中短程的飞行中可携带14kg的行李，在远程的飞行中可携带18kg的行李。</p>
+
+                <h2>3. 起飞重量估算</h2>
+                <p>
+                    起飞重量的初始估计通常是对比参照同类型的飞机。如果不能进行合理的比较（也许是因为规范要求的是一种从未设想过的飞机），那么就有必要进行任意的“猜测”。
+                </p>
+                <h2>4. 任务燃油重量</h2>
+
+                <p>在上文中，第1点指出从非常基本的考虑来估计所需的任务燃料重量并不是困难的。本节将提出这种方法。</p>
+
+                <p>任务燃油重量\(W_{\rm{f}}\)可以写成 \begin{equation} W_{\rm{f}} = W_{\rm{f}_{\rm{used}}} + W_{\rm{f}_{\rm{res}}} \end{equation} 式中，\(W_{\rm{f}_{\rm{used}}}\)是任务过程中真实使用的燃油，\(W_{\rm{f}_{\rm{res}}}\)是任务备用燃油。
+                </p>
+
+                <p>备用燃油通常在任务规范中给出；对于民航运输机，备用燃油要求也会在FAR中给出。备用燃油通常规定为以下一种或多种类型</p>
+                <ul>
+                    <li>作为使用燃油\(W_{\rm{f}_{\rm{used}}}\)；</li>
+                    <li>作为额外航程的要求，以便到达备用机场；</li>
+                    <li>作为（额外）待机时间的要求。</li>
+                </ul>
+
+                <p>为了确定使用任务燃油重量\(W_{\rm{f}_{\rm{used}}}\)，本文将使用<a class="lfdef">燃油分数法</a>。在这种方法中，将飞机的任务过程划分为几个任务阶段。每个阶段所使用的燃油可通过简单的计算或根据经验估算得出。</p>
+
+                <p>针对任意飞机使用燃油分数法对其进行说明。下图图定义了飞机的任务剖面</p>
+                <img src="figures/mission_profile.svg" title="任务剖面示例" />
+
+                <p>可以看出，任务剖面被划分为几个任务阶段，每个任务阶段有一个标号，每个阶段也具有一个对应的开始重量和一个结束重量。</p>
+
+                <p>下面将给出一个重要的定义：每个阶段的<a class="lfdef">燃油分数</a>是指结束重量和开始重量的比值。</p>
+
+                <p>接下来将给出每个任务阶段对应的燃油分数的数值：</p>
+
+                <p><a class="lfkey">第1阶段&emsp;开车和暖机</a>&emsp;开始重量为\(W_{\rm{to}}\)，结束重量为\(W_1\)。根据前面的定义，该阶段的燃油分数定义为\(W_1/W_{\rm{to}}\)。下表给出了12种飞机该阶段的燃油分数。</p>
+
+                <table>
+                    <caption>不同类型飞机各阶段燃油分数</caption>
+                    <thead>
+                        <tr>
+                            <th>任务段<br>序号 </th>
+                            <th align="center">开车和暖机<br>1</th>
+                            <th>滑跑<br>2</th>
+                            <th>起飞<br>3</th>
+                            <th>爬升<br>4</th>
+                            <th>下降<br>7</th>
+                            <th>着陆、滑跑和关车<br>8</th>
+                            <th>\(\Pi\)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th align="left">家制飞机</th>
+                            <td align="center">0.998</td>
+                            <td align="center">0.998</td>
+                            <td align="center">0.998</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.9792</td>
+                        </tr>
+                        <tr>
+                            <th align="left">单发螺旋桨飞机</th>
+                            <td align="center">0.998</td>
+                            <td align="center">0.998</td>
+                            <td align="center">0.998</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.995</td>
+                            <td align="center">0.9792</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><a class="lfkey">第2阶段&emsp;滑跑</a>&emsp;开始重量为\(W_1\)，结束重量为\(W_2\)。该阶段的燃油分数定义为\(W_2/W_1\)。上表中给出了12种飞机该阶段的燃油分数。</p>
+
+                <h2>2.5 空机重量</h2>
+
+
+
+                <img src="figures/农业飞机重量拟合图像.svg" title="农业飞机重量拟合图像">
+
+
+                <h2>2.6 算例</h2>
+
+                <p>下面将用3个算例来验证估算\(W_{\rm{to}}\)、\(W_{\rm{e}}\)和\(W_{\rm{f}}\)的方法：</p>
+
+                <ol>
+                    <li>双发螺旋桨飞机；</li>
+                    <li>喷气运输机；</li>
+                    <li>战斗机。</li>
+                </ol>
+
+                <h3>2.6.1 算例1：双发螺旋桨飞机</h3>
+
+                <p>表中给出一个双螺旋桨飞机的任务规范示例</p>
+
+                <table>
+                    <caption>双发螺旋桨飞机任务规范</caption>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>载荷</td>
+                            <td>6名乘客，每名乘客80 kg；行李共计90 kg </td>
+                        </tr>
+                        <tr>
+                            <td>航程</td>
+                            <td>最大载荷下1600 km，25%的备用任务燃油</td>
+                        </tr>
+                        <tr>
+                            <td>高度</td>
+                            <td>3 km </td>
+                        </tr>
+                        <tr>
+                            <td>任务剖面</td>
+                            <td><img src="figures/双发螺旋桨飞机任务剖面.svg" title="双发螺旋桨飞机任务剖面"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><a class="lfkey">第1步</a>&emsp;计算载荷重量\[W_{\rm{pl}} = 6\times 80\rm{kg}+90\rm{kg}=570 \rm{kg}\]</p>
+                <p><a class="lfkey">第2步</a>&emsp;根据相似机型估算起飞重量，相似机型如下：</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>型号</th>
+                            <th>\(W_{\rm{pl}}\) (kg)
+                            </th>
+                            <th>\(W_{\rm{to}}\) (kg)</th>
+                            <th>\(V_{\rm{cr}.\max}\) (km/h)</th>
+                            <th>Range (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Beech Duke B60 </td>
+                            <td>590</td>
+                            <td>3000</td>
+                            <td>440</td>
+                            <td>2000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><a class="lfkey">第3步</a>&emsp;确定燃油重量</p>
+
+                <ol>
+                    <li>开车和暖机：\(W_1/W_{\rm{to}}=0.992\)；</li>
+                </ol>
+
+
+                <div class="linktable">
+                    <div class="linkitem"><a href="1.html">第一章</a></div>
+                    <div class="linkitem"><a href="index.html">目录</a></div>
+                    <div class="linkitem"><a href="3.html">第三章</a></div>
+                    </table>
+                </div>
+            </div>
+
+            <div class="sidebar "></div>
+        </div>
+
+    </div>
+    </div>
+    <div class="footer ">© Copyright @ 2021 by 蓝风实验室</div>
+</body>
+
+</html>
